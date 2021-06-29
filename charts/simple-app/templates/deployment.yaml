@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: {{ include "hello-go-web.fullname" . }}
-    test: testing
   name: {{ include "hello-go-web.fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
