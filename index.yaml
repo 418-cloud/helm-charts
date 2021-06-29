@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  hello-dotnet:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-06-29T12:03:24.625614386Z"
+    description: A Helm chart for Kubernetes
+    digest: ff65c80159fd316f5371ef7ae1465efa10bf02e98209c362d64b4313422f511b
+    name: hello-dotnet
+    type: application
+    urls:
+    - https://github.com/418-cloud/helm-charts/releases/download/hello-dotnet-0.0.3/hello-dotnet-0.0.3.tgz
+    version: 0.0.3
+  hello-go-web:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-06-29T12:03:24.812710528Z"
+    description: A Helm chart for Kubernetes
+    digest: dd16611f1581c2cc71241751a9ef6050ab7f52251d5d26ad15b00540bbb514c6
+    name: hello-go-web
+    type: application
+    urls:
+    - https://github.com/418-cloud/helm-charts/releases/download/hello-go-web-0.2.2/hello-go-web-0.2.2.tgz
+    version: 0.2.2
+  simple-app:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-06-29T12:03:24.984709486Z"
+    description: A Helm chart for Kubernetes
+    digest: 584b09d321925e95ceeb6056c8c56f42fce7546d98ce8a06399dfb23df69b05f
+    name: simple-app
+    type: application
+    urls:
+    - https://github.com/418-cloud/helm-charts/releases/download/simple-app-0.0.3/simple-app-0.0.3.tgz
+    version: 0.0.3
+generated: "2021-06-29T12:03:24.984715186Z"
