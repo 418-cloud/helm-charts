@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: tjololo/hello-go-web
+  repository: ghcr.io/tjololo/hello-go-web
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.0"
+  tag: "v1.0.0"
 
 url: dev.418.cloud
 
@@ -16,7 +16,7 @@ linkerd:
   inject: true
 
 keda:
-  scale: true
+  scale: false
   threshold: 10
   min: 0
   max: 10
