@@ -1,3 +1,4 @@
+{{- if .Values.contour.enabled }}
 # httpproxy.yaml
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
@@ -14,3 +15,4 @@ spec:
       services:
         - name: {{ include "hello-go-web.fullname" . }}-http
           port: 8080
+{{- end }}

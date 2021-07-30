@@ -21,3 +21,15 @@ keda:
   min: 0
   max: 10
   cooldown: 300
+
+# Expose the service externally with contour.
+contour:
+  enabled: false
+
+# Expose the service externally with traefik.
+traefik:
+  enabled: false
+  entryPoints:
+    - websecure
+  tls:
+    certResolver: default
