@@ -12,6 +12,8 @@ image:
 
 url: dev.418.cloud
 
+labels: {}
+
 linkerd:
   inject: true
 

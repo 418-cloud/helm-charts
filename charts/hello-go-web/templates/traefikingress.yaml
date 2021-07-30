@@ -3,6 +3,8 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: {{ include "hello-go-web.fullname" . }}
+  labels:
+{{ toYaml .Values.labels | indent 4 }}
 spec:
   entryPoints:
     {{- range .Values.traefik.entryPoints }}

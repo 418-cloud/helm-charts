@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: {{ include "hello-go-web.fullname" . }}
+{{ toYaml .Values.labels | indent 4 }}
   name: {{ include "hello-go-web.fullname" . }}
 spec:
   replicas: 1
@@ -14,6 +15,7 @@ spec:
     metadata:
       labels:
         app: {{ include "hello-go-web.fullname" . }}
+{{ toYaml .Values.labels | indent 8 }}
       {{- if .Values.linkerd.inject }}
       annotations:
         linkerd.io/inject: enabled
