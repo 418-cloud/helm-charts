@@ -9,10 +9,10 @@ spec:
     - {{ . }}
     {{- end }}
   routes:
-  - match: Host(`{{ .Values.url }}`) && Path(`/hello`)
+  - match: Host(`{{ .Values.url }}`) && PathPrefix(`/hello`)
     kind: Rule
     services:
-    - name: {{ include "hello-go-web.fullname" . }}
+    - name: {{ include "hello-go-web.fullname" . }}-http
       port: 8080
   tls:
     certResolver: {{ .Values.traefik.tls }}
