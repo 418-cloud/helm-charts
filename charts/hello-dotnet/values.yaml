@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: tjololo/hello-dotnet
+  repository: ghcr.io/tjololo/hello-dotnet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.1.5"
+  tag: "v0.1.6"
 
 url: dev.418.cloud
