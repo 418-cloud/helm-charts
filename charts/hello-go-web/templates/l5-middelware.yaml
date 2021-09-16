@@ -1,4 +1,4 @@
-{{- if and .Values.linkerd.inject .Vales.traefik.enabled }}
+{{- if and .Values.linkerd.inject .Values.traefik.enabled }}
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
