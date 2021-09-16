@@ -13,6 +13,10 @@ spec:
   routes:
   - match: Host(`{{ .Values.url }}`) && PathPrefix(`/hello`)
     kind: Rule
+    {{- if and .Values.linkerd.inject }}
+    middlewares:
+    - name: "{{ include "hello-go-web.fullname" . }}l5d-header-middleware"
+    {{- end }}
     services:
     - name: {{ include "hello-go-web.fullname" . }}
       port: 8080
