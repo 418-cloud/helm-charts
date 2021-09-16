@@ -1,4 +1,4 @@
-{{- if .Values.hpa.enabled }}
+{{- if .Values.flagger.enabled }}
 apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
