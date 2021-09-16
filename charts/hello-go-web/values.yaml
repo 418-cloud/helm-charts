@@ -35,3 +35,14 @@ traefik:
     - websecure
   tls:
     certResolver: default
+
+hpa:
+  enabled: false
+  replicas:
+    min: 2
+    max: 10
+  avgCpuUtilization: 70
+  behavior:
+    stabilizationWindowSeconds:
+      scaleUp: 0
+      scaleDown: 120
