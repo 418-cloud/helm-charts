@@ -19,6 +19,9 @@ spec:
       {{- if .Values.linkerd.inject }}
       annotations:
         linkerd.io/inject: enabled
+        config.linkerd.io/proxy-cpu-request: 100m
+        config.linkerd.io/proxy-memory-limit: 250Mi
+        config.linkerd.io/proxy-memory-request: 20Mi
       {{- end }}
     spec:
       containers:
