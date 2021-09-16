@@ -46,3 +46,6 @@ hpa:
     stabilizationWindowSeconds:
       scaleUp: 0
       scaleDown: 120
+
+flagger:
+  enabled: false
