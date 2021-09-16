@@ -14,13 +14,8 @@ spec:
   - match: Host(`{{ .Values.url }}`) && PathPrefix(`/hello`)
     kind: Rule
     services:
-    {{- if .Values.flagger.enabled }}
     - name: {{ include "hello-go-web.fullname" . }}
       port: 8080
-    {{- else }}
-    - name: {{ include "hello-go-web.fullname" . }}-http
-      port: 8080
-    {{- end }}
   tls:
     certResolver: {{ .Values.traefik.tls.certResolver }}
 {{- end }}

@@ -1,0 +1,11 @@
+{{- if and .Values.linkerd.inject .Vales.traefik.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: "{{ include "hello-go-web.fullname" . }}l5d-header-middleware"
+  namespace: traefik
+spec:
+  headers:
+    customRequestHeaders:
+      l5d-dst-override: "{{ include "hello-go-web.fullname" . }}.{{ .Release.namespace }}.svc.cluster.local:8080"
+{{- end }}
