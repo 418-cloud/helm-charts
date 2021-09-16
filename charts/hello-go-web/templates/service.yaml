@@ -1,3 +1,4 @@
+{{- if not .Values.flagger.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -14,3 +15,4 @@ spec:
     app: {{ include "hello-go-web.fullname" . }}
   sessionAffinity: None
   type: ClusterIP
+{{- end }}
