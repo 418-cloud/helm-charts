@@ -55,10 +55,10 @@ spec:
     #     timeout: 30s
     #     metadata:
     #       type: bash
-    #       cmd: "curl -s http://{{ include "hello-go-web.fullname" . }}.{{ .Values.namespace }}:8080/hello"
+    #       cmd: "curl -s http://{{ include "hello-go-web.fullname" . }}.{{ .Release.Namespace }}:8080/hello"
     #   - name: load-test
     #     type: rollout
     #     url: http://flagger-loadtester.test/
     #     metadata:
-    #       cmd: "hey -z 2m -q 10 -c 2 http://{{ include "hello-go-web.fullname" . }}.{{ .Values.namespace }}:8080/hello"
+    #       cmd: "hey -z 2m -q 10 -c 2 http://{{ include "hello-go-web.fullname" . }}.{{ .Release.Namespace }}:8080/hello"
 {{- end }}

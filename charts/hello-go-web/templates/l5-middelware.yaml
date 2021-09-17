@@ -7,5 +7,5 @@ metadata:
 spec:
   headers:
     customRequestHeaders:
-      l5d-dst-override: "{{ include "hello-go-web.fullname" . }}.{{ .Release.namespace }}.svc.cluster.local:8080"
+      l5d-dst-override: "{{ include "hello-go-web.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:8080"
 {{- end }}
