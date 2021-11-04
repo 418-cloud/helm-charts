@@ -12,6 +12,7 @@ spec:
   routes:
     - conditions:
       - prefix: /hello
+      - prefix: /errors
       services:
         - name: {{ include "hello-go-web.fullname" . }}-http
           port: 8080

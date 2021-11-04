@@ -11,7 +11,7 @@ spec:
     - {{ . }}
     {{- end }}
   routes:
-  - match: Host(`{{ .Values.url }}`) && PathPrefix(`/hello`)
+  - match: Host(`{{ .Values.url }}`) && (PathPrefix(`/hello`) || PathPrefix(`/errors`))
     kind: Rule
     {{- if and .Values.linkerd.inject }}
     middlewares:
