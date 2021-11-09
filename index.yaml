@@ -3,6 +3,16 @@ entries:
   hello-dotnet:
   - apiVersion: v2
     appVersion: 0.2.0
+    created: "2021-11-09T12:13:02.979083655Z"
+    description: A Helm chart for Kubernetes
+    digest: a82beb3bf3da4f7db2ac48dd06633a1c7479a224f3dd823b8a1a1d2ed1db006b
+    name: hello-dotnet
+    type: application
+    urls:
+    - https://github.com/418-cloud/helm-charts/releases/download/hello-dotnet-0.1.1/hello-dotnet-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.2.0
     created: "2021-11-09T11:48:18.168223997Z"
     description: A Helm chart for Kubernetes
     digest: d100d942b28b6357891eabab7520301d0fb4ad057bac54ea7e9e7f9c921ff6d5
@@ -253,4 +263,4 @@ entries:
     urls:
     - https://github.com/418-cloud/helm-charts/releases/download/simple-app-0.0.3/simple-app-0.0.3.tgz
     version: 0.0.3
-generated: "2021-11-09T11:48:18.168452998Z"
+generated: "2021-11-09T12:13:02.979201961Z"
