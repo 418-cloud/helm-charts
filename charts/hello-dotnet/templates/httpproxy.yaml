@@ -1,3 +1,4 @@
+{{- if .Values.contour.enabled }}
 # httpproxy.yaml
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
@@ -18,3 +19,4 @@ spec:
         replacePrefix:
         - prefix: /dotnet
           replacement: /
+{{- end }}
