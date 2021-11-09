@@ -23,7 +23,7 @@ cache:
     # Config for redis example
     config:
       # password: password-in-plain-text-as-this-is-a-demo-app
-      SSL: True
+      SSL: "True"
       connect:
         timeout: 6000
         retries: 2

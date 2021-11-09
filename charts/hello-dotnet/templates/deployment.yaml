@@ -30,13 +30,13 @@ spec:
           value: "Deploy with helm-chart: {{ include "hello-dotnet.chart" . }}"
         {{- if .Values.downstream.URL }}
         - name: Downstream__Enabled
-          value: True
+          value: "True"
         - name: Downstream__URL
-          value: {{ .Values.downstream.URL }}
+          value: "{{ .Values.downstream.URL }}"
         {{- end }}
         {{- if .Values.cache.mem.enabled }}
         - name: Cache__MemCache
-          value: True
+          value: "True"
         {{- end }}
         {{- if .Values.cache.redis.enabled }}
         - name: Redis__Password
