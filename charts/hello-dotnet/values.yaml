@@ -8,6 +8,39 @@ image:
   repository: ghcr.io/tjololo/hello-dotnet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.1.6"
+  tag: "v0.2.0"
 
 url: dev.418.cloud
+
+downstream: {}
+  # URL: http://localhost:5000/hello?sleep=5
+
+cache:
+  mem:
+    enabled: false
+  redis:
+    enabled: false
+    # Config for redis example
+    config:
+      # password: password-in-plain-text-as-this-is-a-demo-app
+      SSL: True
+      connect:
+        timeout: 6000
+        retries: 2
+      # host: redis.default.svc
+      # port: 5003
+
+applicationInsights: {}
+  # key: InstrumentationKey-in-plain-text-as-this-is-a-demo-app
+
+additionalEnv: {}
+  # EXAMPLE: demo
+
+linkerd:
+  inject: true
+
+contour:
+  enabled: true
+
+traefik:
+  enabled: false

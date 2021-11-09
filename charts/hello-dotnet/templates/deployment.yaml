@@ -14,6 +14,13 @@ spec:
     metadata:
       labels:
         app: {{ include "hello-dotnet.fullname" . }}
+      {{- if .Values.linkerd.inject }}
+      annotations:
+        linkerd.io/inject: enabled
+        config.linkerd.io/proxy-cpu-request: 100m
+        config.linkerd.io/proxy-memory-limit: 250Mi
+        config.linkerd.io/proxy-memory-request: 20Mi
+      {{- end }}
     spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
@@ -21,6 +28,40 @@ spec:
         env:
         - name: APP_INFO
           value: "Deploy with helm-chart: {{ include "hello-dotnet.chart" . }}"
+        {{- if .Values.downstream.URL }}
+        - name: Downstream__Enabled
+          value: True
+        - name: Downstream__URL
+          value: {{ .Values.downstream.URL }}
+        {{- end }}
+        {{- if .Values.cache.mem.enabled }}
+        - name: Cache__MemCache
+          value: True
+        {{- end }}
+        {{- if .Values.cache.redis.enabled }}
+        - name: Redis__Password
+          value: {{ .Values.cache.redis.config.password }}
+        - name: Redis__Ssl
+          value: {{ .Values.cache.redis.config.SSL }}
+        - name: Redis__ConnectTimeout
+          value: {{ .Values.cache.redis.config.connect.timeout }}
+        - name: Redis__ConnectRetry
+          value: {{ .Values.cache.redis.config.connect.retries }}
+        - name: Redis__Hosts__0__Host
+          value: {{ .Values.cache.redis.config.host }}
+        - name: Redis__Hosts__0__Port
+          value: {{ .Values.cache.redis.config.port }}
+        - name: Cache__RedisConfigured
+          value: True
+        {{- end }}
+        {{- if .Values.applicationInsights.key }}
+        - name: APPINSIGHTS_INSTRUMENTATIONKEY
+          value: {{ .Values.applicationInsights.key }}
+        {{- end}}
+        {{- range $k, $v := .Values.additionalEnv }}
+        - name: {{ $k }}
+          value: {{ $v }}
+        {{- end }}
         readinessProbe:
           failureThreshold: 3
           successThreshold: 1
