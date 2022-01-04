@@ -54,6 +54,16 @@ entries:
   hello-go-web:
   - apiVersion: v2
     appVersion: 1.1.0
+    created: "2022-01-04T15:10:44.710744127Z"
+    description: A Helm chart for Kubernetes
+    digest: 94516edc4a119124a28cf4dea792ed29138d2dc33216f84dc890b80ca6fd6c11
+    name: hello-go-web
+    type: application
+    urls:
+    - https://github.com/418-cloud/helm-charts/releases/download/hello-go-web-0.7.2/hello-go-web-0.7.2.tgz
+    version: 0.7.2
+  - apiVersion: v2
+    appVersion: 1.1.0
     created: "2021-11-04T07:53:12.62903887Z"
     description: A Helm chart for Kubernetes
     digest: 4e0eddd77a32ee267b552037006476362461cba1e3202a9618cd216c5536f1b8
@@ -263,4 +273,4 @@ entries:
     urls:
     - https://github.com/418-cloud/helm-charts/releases/download/simple-app-0.0.3/simple-app-0.0.3.tgz
     version: 0.0.3
-generated: "2021-11-09T12:13:02.979201961Z"
+generated: "2022-01-04T15:10:44.71093413Z"
