@@ -12,7 +12,8 @@ spec:
   - host: {{ .Values.url }}
     http:
       paths:
-      - backend:
+      - pathType: ImplementationSpecific
+        backend:
           service:
             name: {{ include "hello-go-web.fullname" . }}
             port: 
