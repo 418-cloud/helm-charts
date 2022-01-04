@@ -12,9 +12,11 @@ spec:
   - host: {{ .Values.url }}
     http:
       paths:
-      - backend:
-          serviceName: {{ include "hello-go-web.fullname" . }}
-          servicePort: 8080
+      - defaultBackend:
+          service:
+            name: {{ include "hello-go-web.fullname" . }}
+            port: 
+              number: 8080
   tls:
   - hosts:
     - {{ .Values.url }}
