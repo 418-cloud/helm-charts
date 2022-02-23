@@ -34,7 +34,9 @@ traefik:
   entryPoints:
     - websecure
   # tls:
-  #   certResolver: default
+  #   secretName: my-secret-cert
+  #   domains:
+  #     main: example.com
 
 hpa:
   enabled: false

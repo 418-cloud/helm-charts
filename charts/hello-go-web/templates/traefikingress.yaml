@@ -20,8 +20,10 @@ spec:
     services:
     - name: {{ include "hello-go-web.fullname" . }}
       port: 8080
-  {{- if .Values.traefik.tls.certResolver }}
+  {{- if .Values.traefik.tls }}
   tls:
-    certResolver: {{ .Values.traefik.tls.certResolver }}
+    secretName: {{ .Values.traefik.tls.secretName }}
+    domains:
+    - main: {{ .Values.traefik.tls.domains.main}}
   {{- end}}
 {{- end }}
